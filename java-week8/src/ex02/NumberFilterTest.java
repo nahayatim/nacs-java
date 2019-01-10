@@ -6,21 +6,26 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Predicate;
 
 class NumberFilterTest {
 
-    NumberFilter numberFilter = new NumberFilter();
+    private NumberFilter filter = new NumberFilter();
+    private List<Integer> numbers = Arrays.asList(2, 4, 6, 7, 8, 9);
+
 
     @Test
-    void testGetEven(){
-        List<Integer>numbers = Arrays.asList(2,3,5,8,9);
+    void testGetEven() {
+        Predicate<Integer> condition = number -> (number % 2) == 0;
 
-        List<Integer> expected = Arrays.asList(2,8);
-        List<Integer>actual = numberFilter.getEven(numbers);
+        List<Integer> filtered = filter.filterNumber(numbers, condition);
+        List<Integer> expected = Arrays.asList(2, 4, 6, 8);
+        Assertions.assertEquals(expected, filtered);
 
-        Assertions.assertEquals(expected,actual);
+        condition = number -> (number % 2) == 1;
 
+        filtered = filter.filterNumber(numbers, condition);
+        expected = Arrays.asList(7, 9);
+        Assertions.assertEquals(expected, filtered);
     }
-
-
 }
