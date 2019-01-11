@@ -8,18 +8,18 @@ public class lambdas {
     public static void main(String[] args) {
 
         List<String> names = new ArrayList<>(Arrays.asList("somewhere", "scenario",
-                "table" ,"cable","glass","backpack","mouse"));
+                "table", "cable", "glass", "backpack", "mouse"));
         System.out.println(names);
 
         names.removeIf(e -> e.endsWith("e"));
         System.out.println(names);
 
-        names.replaceAll(e->e.toUpperCase());
+        names.replaceAll(e -> e.toUpperCase());
         System.out.println(names);
 
-        names.removeIf(e-> e.length()<6);
+        names.removeIf(e -> e.length() < 6);
         System.out.println(names);
 
-        names.forEach(name-> System.out.println(name));
+        names.forEach(name -> System.out.println(name));
     }
 }

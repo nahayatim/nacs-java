@@ -18,14 +18,14 @@ class NumberFilterTest {
     void testGetEven() {
         Predicate<Integer> condition = number -> (number % 2) == 0;
 
-        List<Integer> filtered = filter.filterNumber(numbers, condition);
+        List<Integer> even = filter.filterNumber(numbers, condition);
         List<Integer> expected = Arrays.asList(2, 4, 6, 8);
-        Assertions.assertEquals(expected, filtered);
+        Assertions.assertEquals(expected, even);
 
         condition = number -> (number % 2) == 1;
 
-        filtered = filter.filterNumber(numbers, condition);
+        List<Integer>odd = filter.filterNumber(numbers, condition);
         expected = Arrays.asList(7, 9);
-        Assertions.assertEquals(expected, filtered);
+        Assertions.assertEquals(expected, odd);
     }
 }

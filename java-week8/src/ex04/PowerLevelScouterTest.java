@@ -18,14 +18,14 @@ class PowerLevelScouterTest {
         Integer susanaLvl = levelScouter.scout("Susana");
 
         int expected = 619;
-        assertEquals(expected,susanaLvl);
+        assertEquals(expected, susanaLvl);
 
     }
 
     @Test
     void scoutEnhanced() {
         Integer susanaLvl = levelScouter.scoutInhaced("Susana");
-        int expected =651;
-        assertEquals(expected,susanaLvl);
+        int expected = 651;
+        assertEquals(expected, susanaLvl);
     }
 }

@@ -8,7 +8,7 @@ public class PowerLevelScouter {
 
 
     public Integer scout(String name) {
-        return calculator(name, s -> (int) s.charAt(0));
+        return calculator(name, letter -> (int) letter.charAt(0));
     }
 
     public Integer scoutInhaced(String name) {
